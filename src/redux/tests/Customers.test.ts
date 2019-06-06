@@ -3,6 +3,7 @@ import store from '../../assets/utilities/store';
 import {
   loadCustomers,
   addCustomer,
+  deleteCustomer,
 } from '../action_creators/Customers.actioncreator';
 import {
   loadCustomerData,
@@ -26,9 +27,19 @@ test('should load customer data', async () => {
 /**
  * Test adding customer
  *
- * Expect state to equal default
+ * Expect state to added customer data
  */
 test('should add customer data', async () => {
   store.dispatch<any>(addCustomer(addCustomerData));
   expect(store.getState().Customers.data).toEqual(addedCustomerData);
+});
+
+/**
+ * Test deleting customer
+ *
+ * Expect state to equal default
+ */
+test('should delete customer data', async () => {
+  store.dispatch<any>(deleteCustomer(2));
+  expect(store.getState().Customers.data).toEqual(loadCustomerData);
 });
