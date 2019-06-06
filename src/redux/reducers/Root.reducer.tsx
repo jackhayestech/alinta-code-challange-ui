@@ -4,7 +4,7 @@ import Customers from './Customers.reducer';
 // The action interface.
 export interface action {
   type: string;
-  data: object;
+  data: any;
 }
 
 const rootReducer = () => combineReducers({ Customers });

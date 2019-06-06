@@ -9,6 +9,7 @@ const initialState = {
 };
 
 export const ADD_CUSTOMER = 'ADD_CUSTOMER';
+export const DELETE_CUSTOMER = 'DELETE_CUSTOMER';
 
 const Customers = (state = initialState, action: action) => {
   switch (action.type) {
@@ -18,6 +19,14 @@ const Customers = (state = initialState, action: action) => {
         data: [
           ...state.data,
           action.data,
+        ]
+      }
+    case DELETE_CUSTOMER:
+      return {
+        ...state,
+        data: [
+          ...state.data.slice(0, action.data),
+          ...state.data.slice(action.data + 1)
         ]
       }
     default:
