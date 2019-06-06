@@ -1,3 +1,4 @@
+import { action } from './Root.reducer';
 import { localCustomerData } from '../../assets/data/customer.data';
 
 let customerData: object[] = [];
@@ -9,10 +10,6 @@ if (process.env.REACT_APP_LOCAL_DEV === 'true') {
 const initialState = {
   data: customerData,
 };
-
-interface action {
-  type: string;
-}
 
 const Customers = (state = initialState, action: action) => {
   switch (action.type) {
