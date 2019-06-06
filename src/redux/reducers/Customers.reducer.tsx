@@ -3,7 +3,7 @@ import { localCustomerData } from '../../assets/data/customer.data';
 
 let customerData: object[] = [];
 // If the application is being run without connecting to an api load local customer data.
-if (process.env.REACT_APP_LOCAL_DEV === 'true') {
+if (process.env.REACT_APP_LOCAL_DEV) {
   customerData = localCustomerData;
 }
 
