@@ -1,4 +1,5 @@
 import { action } from './Root.reducer';
+import { LOAD_CUSTOMERS, ADD_CUSTOMER, DELETE_CUSTOMER } from '../Actions';
 import { localCustomerData } from '../../assets/data/customer.data';
 
 // If the application is being run without connecting to an api load local customer data.
@@ -9,10 +10,6 @@ let customerData: object[] = process.env.REACT_APP_LOCAL_DEV
 const initialState = {
   data: customerData,
 };
-
-export const LOAD_CUSTOMERS = 'LOAD_CUSTOMERS';
-export const ADD_CUSTOMER = 'ADD_CUSTOMER';
-export const DELETE_CUSTOMER = 'DELETE_CUSTOMER';
 
 const Customers = (state = initialState, action: action) => {
   switch (action.type) {
