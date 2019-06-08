@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomerInfo from './customer_info/CustomerInfo.component';
+import EditCustomer from './edit_customer/EditCustomer.component';
 
 interface CustomerRowProps {
   arrPos: number;
@@ -19,6 +20,7 @@ export const CustomerRow: React.FC<CustomerRowProps> = ({
     <CustomerInfo info={fn} />
     <CustomerInfo info={ln} />
     <CustomerInfo info={dob} />
+    <EditCustomer custIndex={arrPos} />
   </div>
 );
 
