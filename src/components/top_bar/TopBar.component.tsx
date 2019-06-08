@@ -1,12 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Search from './search/Search.connector';
 import AddCustomer from './add_customer/AddCustomer.component';
 
+const Bar = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+
 export const TopBar: React.FunctionComponent = (): JSX.Element => (
-  <div id="topBar">
+  <Bar>
     <Search />
     <AddCustomer />
-  </div>
+  </Bar>
 );
 
 export default TopBar;
