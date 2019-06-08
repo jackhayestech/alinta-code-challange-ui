@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Block = styled.div`
+  padding: 0px 10px;
+`;
 
 interface CustomerInfo {
   childer: object;
@@ -6,6 +11,6 @@ interface CustomerInfo {
 
 export const CustomerInfo: React.FC<CustomerInfo> = ({
   children,
-}): JSX.Element => <div>{children}</div>;
+}): JSX.Element => <Block>{children}</Block>;
 
 export default CustomerInfo;

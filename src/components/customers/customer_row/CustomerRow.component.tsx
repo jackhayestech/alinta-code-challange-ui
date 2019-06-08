@@ -4,9 +4,9 @@ import CustomerBlock from './customer_block/CustomerBlock.component';
 import EditCustomer from './edit_customer/EditCustomer.component';
 import DeleteCustomer from './delete_customer/DeleteCustomer.component';
 
-const Row = styled.section`
+const Row = styled.div`
   display: flex;
-  margin: 10px;
+  margin: 10px 0px;
 `;
 
 interface CustomerRowProps {
