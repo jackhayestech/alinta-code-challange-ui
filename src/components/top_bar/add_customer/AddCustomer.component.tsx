@@ -7,8 +7,18 @@ const Add = styled.div`
   padding-left: 10px;
 `;
 
-export const AddCustomer: React.FunctionComponent = (): JSX.Element => (
-  <Add>
+interface AddCustomer {
+  toggleModalDisplay: Function;
+}
+
+export const AddCustomer: React.FC<AddCustomer> = ({
+  toggleModalDisplay,
+}): JSX.Element => (
+  <Add
+    onClick={() => {
+      toggleModalDisplay();
+    }}
+  >
     Add customer.
   </Add>
 );

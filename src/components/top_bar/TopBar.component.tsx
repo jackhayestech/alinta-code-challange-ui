@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Search from './search/Search.connector';
-import AddCustomer from './add_customer/AddCustomer.component';
+import AddCustomer from './add_customer/AddCustomer.connector';
 
 const Bar = styled.div`
   display: flex;
