@@ -6,7 +6,7 @@ const Block = styled.div`
 `;
 
 interface CustomerInfo {
-  childer: object;
+  childern: object;
 }
 
 export const CustomerInfo: React.FC<CustomerInfo> = ({
