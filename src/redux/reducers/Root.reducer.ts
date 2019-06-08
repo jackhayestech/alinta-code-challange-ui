@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import Customers from './Customers.reducer';
+import Ui from './Ui.reducer';
 
 // The action interface.
 export interface action {
@@ -7,6 +8,6 @@ export interface action {
   data: any;
 }
 
-const rootReducer = () => combineReducers({ Customers });
+const rootReducer = () => combineReducers({ Customers, Ui });
 
 export default rootReducer;
