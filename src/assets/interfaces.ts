@@ -10,7 +10,12 @@ export interface CustomerStore {
   data: Customer[];
 }
 
+export interface UiStore {
+  filter: string;
+}
+
 // The store interface
 export interface StoreState {
   Customers: CustomerStore;
+  Ui: UiStore;
 }
