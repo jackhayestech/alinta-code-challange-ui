@@ -15,7 +15,7 @@ interface CustomerRowProps {
   fn: string;
   ln: string;
   dob: string;
-};
+}
 
 export const CustomerRow: React.FC<CustomerRowProps> = ({
   arrPos,
@@ -24,15 +24,9 @@ export const CustomerRow: React.FC<CustomerRowProps> = ({
   dob,
 }): JSX.Element => (
   <Row>
-    <CustomerBlock>
-      {fn}
-    </CustomerBlock>
-    <CustomerBlock>
-      {ln}
-    </CustomerBlock>
-    <CustomerBlock>
-      {dob}
-    </CustomerBlock>
+    <CustomerBlock>{fn}</CustomerBlock>
+    <CustomerBlock>{ln}</CustomerBlock>
+    <CustomerBlock>{dob}</CustomerBlock>
     <CustomerBlock>
       <EditCustomer custIndex={arrPos} />
     </CustomerBlock>

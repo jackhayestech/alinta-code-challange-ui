@@ -4,8 +4,8 @@ interface CustomerInfo {
   childer: object;
 }
 
-export const CustomerInfo: React.FC<CustomerInfo> = ({ children }): JSX.Element => (
-  <div>{children}</div>
-);
+export const CustomerInfo: React.FC<CustomerInfo> = ({
+  children,
+}): JSX.Element => <div>{children}</div>;
 
 export default CustomerInfo;
