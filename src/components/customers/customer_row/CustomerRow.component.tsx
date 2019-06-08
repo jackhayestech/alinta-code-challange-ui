@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import CustomerInfo from './customer_info/CustomerInfo.component';
+import CustomerBlock from './customer_block/CustomerBlock.component';
 import EditCustomer from './edit_customer/EditCustomer.component';
 import DeleteCustomer from './delete_customer/DeleteCustomer.component';
 
@@ -24,11 +24,21 @@ export const CustomerRow: React.FC<CustomerRowProps> = ({
   dob,
 }): JSX.Element => (
   <Row>
-    <CustomerInfo info={fn} />
-    <CustomerInfo info={ln} />
-    <CustomerInfo info={dob} />
-    <EditCustomer custIndex={arrPos} />
-    <DeleteCustomer custIndex={arrPos} />
+    <CustomerBlock>
+      {fn}
+    </CustomerBlock>
+    <CustomerBlock>
+      {ln}
+    </CustomerBlock>
+    <CustomerBlock>
+      {dob}
+    </CustomerBlock>
+    <CustomerBlock>
+      <EditCustomer custIndex={arrPos} />
+    </CustomerBlock>
+    <CustomerBlock>
+      <DeleteCustomer custIndex={arrPos} />
+    </CustomerBlock>
   </Row>
 );
 
