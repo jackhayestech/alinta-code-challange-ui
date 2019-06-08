@@ -1,7 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 import CustomerInfo from './customer_info/CustomerInfo.component';
 import EditCustomer from './edit_customer/EditCustomer.component';
 import DeleteCustomer from './delete_customer/DeleteCustomer.component';
+
+const Row = styled.section`
+  display: flex;
+  margin: 10px;
+`;
 
 interface CustomerRowProps {
   arrPos: number;
@@ -17,13 +23,13 @@ export const CustomerRow: React.FC<CustomerRowProps> = ({
   ln,
   dob,
 }): JSX.Element => (
-  <div className="customerRow">
+  <Row>
     <CustomerInfo info={fn} />
     <CustomerInfo info={ln} />
     <CustomerInfo info={dob} />
     <EditCustomer custIndex={arrPos} />
     <DeleteCustomer custIndex={arrPos} />
-  </div>
+  </Row>
 );
 
 export default CustomerRow;
