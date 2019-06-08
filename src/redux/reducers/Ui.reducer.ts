@@ -17,7 +17,7 @@ const Ui = (state = initialState, action: action) => {
       return {
         ...state,
         modalDisplay: !state.modalDisplay,
-      }
+      };
     default:
       return state;
   }
