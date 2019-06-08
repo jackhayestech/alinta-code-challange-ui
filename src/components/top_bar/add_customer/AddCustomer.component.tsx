@@ -1,9 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Add = styled.div`
+  text-decoration: underline;
+  cursor: pointer;
+  padding-left: 10px;
+`;
 
 export const AddCustomer: React.FunctionComponent = (): JSX.Element => (
-  <div>
+  <Add>
     Add customer.
-  </div>
+  </Add>
 );
 
 export default AddCustomer;
