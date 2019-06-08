@@ -13,6 +13,7 @@ export interface CustomerStore {
 export interface UiStore {
   filter: string;
   modalDisplay: boolean;
+  modalType: string;
 }
 
 // The store interface
