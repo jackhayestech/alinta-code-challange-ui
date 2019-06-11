@@ -9,14 +9,17 @@ const Add = styled.div`
 
 interface AddCustomer {
   toggleModalDisplay: Function;
+  setModalType: Function;
 }
 
 export const AddCustomer: React.FC<AddCustomer> = ({
   toggleModalDisplay,
+  setModalType,
 }): JSX.Element => (
   <Add
     onClick={() => {
       toggleModalDisplay();
+      setModalType();
     }}
   >
     Add customer.
