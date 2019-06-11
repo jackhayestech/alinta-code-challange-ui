@@ -1,9 +1,8 @@
 // The customer interface.
 export interface Customer {
-  id: number;
   firstName: string;
   lastName: string;
-  dob: string;
+  dob: Date;
 }
 
 export interface CustomerStore {

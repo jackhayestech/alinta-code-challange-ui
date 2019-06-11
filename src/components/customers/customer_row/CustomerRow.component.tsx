@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment'
 import styled from 'styled-components';
 import CustomerBlock from './customer_block/CustomerBlock.component';
 import EditCustomer from './edit_customer/EditCustomer.component';
@@ -14,7 +15,7 @@ interface CustomerRowProps {
   key: number;
   fn: string;
   ln: string;
-  dob: string;
+  dob: Date;
 }
 
 export const CustomerRow: React.FC<CustomerRowProps> = ({
@@ -26,7 +27,7 @@ export const CustomerRow: React.FC<CustomerRowProps> = ({
   <Row>
     <CustomerBlock>{fn}</CustomerBlock>
     <CustomerBlock>{ln}</CustomerBlock>
-    <CustomerBlock>{dob}</CustomerBlock>
+    <CustomerBlock>{moment(dob).format('DD/MM/YYYY')}</CustomerBlock>
     <CustomerBlock>
       <EditCustomer custIndex={arrPos} />
     </CustomerBlock>
