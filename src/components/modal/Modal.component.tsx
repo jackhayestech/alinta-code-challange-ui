@@ -9,6 +9,9 @@ const Background = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 interface Modal {

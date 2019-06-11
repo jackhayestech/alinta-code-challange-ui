@@ -4,11 +4,9 @@ import styled from 'styled-components';
 import { ModalType } from '../../../assets/enums';
 
 const ModalContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  cursor: pointer;
+  min-width: 50px;
+  min-height: 50px;
+  background-color: #ffffff;
 `;
 
 interface ModalContainerProps {
