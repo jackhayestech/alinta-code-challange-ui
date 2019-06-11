@@ -3,6 +3,7 @@ import store from '../../assets/utilities/store';
 import {
   setFilterText,
   toggleModalDisplay,
+  setModalType,
 } from '../action_creators/Ui.actioncreator';
 
 /**
@@ -19,7 +20,7 @@ test('should correctly set filter text', async () => {
 });
 
 /**
- * Test setting filter text
+ * Test toggling modal display
  *
  * Expect state to equal true
  * Expect state to equal false
@@ -32,4 +33,17 @@ test('should correctly set modal display', async () => {
   expect(store.getState().Ui.modalDisplay).toEqual(true);
   store.dispatch<any>(toggleModalDisplay());
   expect(store.getState().Ui.modalDisplay).toEqual(false);
+});
+
+/**
+ * Test setting filter text
+ *
+ * Expect state to equal default
+ * Expect state to equal entered text
+ *
+ */
+test('should correctly set filter text', async () => {
+  expect(store.getState().Ui.modalType).toEqual(null);
+  store.dispatch<any>(setModalType('test'));
+  expect(store.getState().Ui.modalType).toEqual('test');
 });
