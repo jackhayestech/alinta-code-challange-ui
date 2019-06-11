@@ -1,9 +1,8 @@
 // The customer interface.
 export interface Customer {
-  id: number;
   firstName: string;
   lastName: string;
-  dob: string;
+  dob: Date;
 }
 
 export interface CustomerStore {
@@ -12,6 +11,8 @@ export interface CustomerStore {
 
 export interface UiStore {
   filter: string;
+  modalDisplay: boolean;
+  modalType: string;
 }
 
 // The store interface

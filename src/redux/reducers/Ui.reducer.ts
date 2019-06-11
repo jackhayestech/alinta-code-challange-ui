@@ -1,8 +1,10 @@
 import { action } from './Root.reducer';
-import { SET_FILTER_TEXT } from '../Actions';
+import { SET_FILTER_TEXT, TOGGLE_MODAL_DISPLAY, SET_MODAL_TYPE } from '../Actions';
 
 const initialState = {
   filter: '',
+  modalDisplay: false,
+  modalType: null,
 };
 
 const Ui = (state = initialState, action: action) => {
@@ -11,6 +13,16 @@ const Ui = (state = initialState, action: action) => {
       return {
         ...state,
         filter: action.data,
+      };
+    case TOGGLE_MODAL_DISPLAY:
+      return {
+        ...state,
+        modalDisplay: !state.modalDisplay,
+      };
+    case SET_MODAL_TYPE:
+      return {
+        ...state,
+        modalType: action.data,
       };
     default:
       return state;
