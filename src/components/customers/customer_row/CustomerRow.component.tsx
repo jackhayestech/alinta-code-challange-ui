@@ -12,7 +12,6 @@ const Row = styled.div`
 
 interface CustomerRowProps {
   arrPos: number;
-  key: number;
   fn: string;
   ln: string;
   dob: Date;

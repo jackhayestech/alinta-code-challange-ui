@@ -24,10 +24,9 @@ export const Customers: React.FC<CustomersProps> = ({
   return (
     <div id="customer">
       {customers.map((customer, i) => (
-        <div>
+        <div key={`key-${i}`}>
           {filterCustomer(customer.firstName, customer.lastName) ? (
             <CustomerRow
-              key={i}
               arrPos={i}
               fn={customer.firstName}
               ln={customer.lastName}
