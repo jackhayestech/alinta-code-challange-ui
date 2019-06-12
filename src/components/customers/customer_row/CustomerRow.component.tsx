@@ -27,12 +27,8 @@ export const CustomerRow: React.FC<CustomerRowProps> = ({
     <CustomerBlock>{fn}</CustomerBlock>
     <CustomerBlock>{ln}</CustomerBlock>
     <CustomerBlock>{moment(dob).format('DD/MM/YYYY')}</CustomerBlock>
-    <CustomerBlock>
-      <EditCustomer custIndex={arrPos} />
-    </CustomerBlock>
-    <CustomerBlock>
-      <DeleteCustomer custIndex={arrPos} />
-    </CustomerBlock>
+    <EditCustomer custIndex={arrPos} />
+    <DeleteCustomer custIndex={arrPos} />
   </Row>
 );
 

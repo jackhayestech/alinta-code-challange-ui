@@ -18,10 +18,20 @@ const InputContainer = styled.div`
   padding: 7px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  padding: 7px;
+  justify-content: right;
+`;
+
 const Label = styled.div`
   width: 100px;
   display: flex;
   align-items: center;
+`;
+
+const Button = styled.button`
+  padding: 7px;
 `;
 
 interface EditCustomer {
@@ -77,8 +87,8 @@ const EditCustomer: React.FC<EditCustomer> = ({ selectedCustomer, customerData, 
           }}
         />
       </InputContainer>
-      <InputContainer>
-        <button onClick={() => {
+      <ButtonContainer>
+        <Button onClick={() => {
           const customer: Customer = {
             dob: dob,
             firstName: fn,
@@ -87,9 +97,9 @@ const EditCustomer: React.FC<EditCustomer> = ({ selectedCustomer, customerData, 
           editCustomer(selectedCustomer, customer);
           toggle();
         }}>
-          Add Customer
-        </button>
-      </InputContainer>
+          Edit Customer
+        </Button>
+      </ButtonContainer>
     </Wrapper>
   );
 };

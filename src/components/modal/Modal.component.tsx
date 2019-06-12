@@ -8,6 +8,7 @@ const Background = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
+  top: 0;
   cursor: pointer;
   display: flex;
   justify-content: center;

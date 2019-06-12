@@ -1,7 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
+const Container = styled.div`
+  padding: 0px 10px;
+  cursor: pointer;
+`;
 
 interface DeleteCustomer {
   toggleModalDisplay: Function;
@@ -10,7 +16,7 @@ interface DeleteCustomer {
 }
 
 export const DeleteCustomer: React.FC<DeleteCustomer> = ({ toggleModalDisplay, setModalType, setSelectedCustomer }): JSX.Element => (
-  <div
+  <Container
     className="button-icon"
     onMouseDown={() => {
       toggleModalDisplay();
@@ -21,7 +27,7 @@ export const DeleteCustomer: React.FC<DeleteCustomer> = ({ toggleModalDisplay, s
     tabIndex={0}
   >
     <FontAwesomeIcon icon={faTrash} />
-  </div>
+  </Container>
 );
 
 export default DeleteCustomer;

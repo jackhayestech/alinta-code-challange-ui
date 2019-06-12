@@ -5,6 +5,8 @@ const Add = styled.div`
   text-decoration: underline;
   cursor: pointer;
   padding-left: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
 `;
 
 interface AddCustomer {
@@ -22,7 +24,7 @@ export const AddCustomer: React.FC<AddCustomer> = ({
       setModalType();
     }}
   >
-    Add customer.
+    Add customer
   </Add>
 );
 

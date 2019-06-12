@@ -1,7 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+
+const Container = styled.div`
+  padding: 0px 10px;
+  cursor: pointer;
+`;
+
 
 interface EditCustomer {
   toggleModalDisplay: Function;
@@ -10,7 +17,7 @@ interface EditCustomer {
 }
 
 export const EditCustomer: React.FC<EditCustomer> = ({ toggleModalDisplay, setModalType, setSelectedCustomer }): JSX.Element => (
-  <div
+  <Container
     className="button-icon"
     onMouseDown={() => {
       toggleModalDisplay();
@@ -21,7 +28,7 @@ export const EditCustomer: React.FC<EditCustomer> = ({ toggleModalDisplay, setMo
     tabIndex={0}
   >
     <FontAwesomeIcon icon={faPencilAlt} />
-  </div>
+  </Container>
 );
 
 export default EditCustomer;
