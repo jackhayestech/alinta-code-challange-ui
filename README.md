@@ -8,7 +8,7 @@ This project was created to meet the requirements set in the Alinta Energy codin
 
 ## Project installation for local development on Mac
 
-1. Clone the project onto your local machine using `git clone https://github.com/jackhayestech/active-pipe-challenge.git`
+1. Clone the project onto your local machine using `git clone https://github.com/jackhayestech/alinta-code-challange-ui`
 
 2. Install all the required dependencies with the command `npm install` run from within the projects main directory.
 
