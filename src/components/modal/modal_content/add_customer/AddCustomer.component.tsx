@@ -47,7 +47,7 @@ const AddCustomer: React.FC<AddCustomer> = ({ toggle, addCustomer }) => {
   return (
     <Wrapper>
       <Header>Add Customer</Header>
-      <form>
+      <form onSubmit={(e) => {e.preventDefault();}}>
         <InputContainer>
           <Label>First name:&nbsp;</Label>
           <input
@@ -74,7 +74,6 @@ const AddCustomer: React.FC<AddCustomer> = ({ toggle, addCustomer }) => {
           <Label>Date of birth:&nbsp;</Label>
           <DatePicker
             selected={dob}
-            dateFormat="dd-mm-yyyy"
             onChange={(date: any) => {
               setDob(date);
             }}
@@ -82,8 +81,8 @@ const AddCustomer: React.FC<AddCustomer> = ({ toggle, addCustomer }) => {
         </InputContainer>
         <ButtonContainer>
           <Button
-            onSubmit={(e) => {
-              e.preventDefault();
+            type="submit"
+            onClick={() => {
               const customer: Customer = {
                 dob: dob,
                 firstName: fn,
