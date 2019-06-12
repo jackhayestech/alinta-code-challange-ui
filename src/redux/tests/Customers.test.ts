@@ -52,7 +52,7 @@ test('should delete customer data', async () => {
  *
  * Expect state to expected data
  */
-test('should delete customer data', async () => {
+test('should edit customer data', async () => {
   store.dispatch<any>(editCustomer(0, editCustomerData));
   expect(store.getState().Customers.data).toEqual(editedCustomerData);
 });

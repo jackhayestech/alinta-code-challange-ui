@@ -81,7 +81,6 @@ const EditCustomer: React.FC<EditCustomer> = ({ selectedCustomer, customerData, 
         </Label>
         <DatePicker
           selected={dob}
-          dateFormat="yyyy-mm-dd"
           onChange={(date: any) => {
             setDob(date);
           }}

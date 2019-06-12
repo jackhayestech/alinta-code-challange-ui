@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Customer } from '../../../../assets/interfaces'
+import { Customer } from '../../../../assets/interfaces';
 import DatePicker from 'react-datepicker';
 import styled from 'styled-components';
 
@@ -36,7 +36,7 @@ const Button = styled.button`
 
 interface AddCustomer {
   toggle: Function;
-  addCustomer: Function
+  addCustomer: Function;
 }
 
 const AddCustomer: React.FC<AddCustomer> = ({ toggle, addCustomer }) => {
@@ -46,58 +46,56 @@ const AddCustomer: React.FC<AddCustomer> = ({ toggle, addCustomer }) => {
 
   return (
     <Wrapper>
-      <Header>
-        Add Customer
-      </Header>
-      <InputContainer>
-        <Label>
-          First name:&nbsp;
-        </Label>
-        <input
-          type="text"
-          value={fn}
-          onChange={e => {
-            setFn(e.target.value);
-          }}
-        />
-      </InputContainer>
-      <InputContainer>
-        <Label>
-          Last name:&nbsp;
-        </Label>
-        <input
-          type="text"
-          value={ln}
-          onChange={e => {
-            setLn(e.target.value);
-          }}
-        />
-      </InputContainer>
-      <InputContainer>
-        <Label>
-          Date of birth:&nbsp;
-        </Label>
-        <DatePicker
-          selected={dob}
-          dateFormat="yyyy-mm-dd"
-          onChange={(date: any) => {
-            setDob(date);
-          }}
-        />
-      </InputContainer>
-      <ButtonContainer>
-        <Button onClick={() => {
-          const customer: Customer = {
-            dob: dob,
-            firstName: fn,
-            lastName: ln,
-          };
-          addCustomer(customer);
-          toggle();
-        }}>
-          Add Customer
-        </Button>
-      </ButtonContainer>
+      <Header>Add Customer</Header>
+      <form onSubmit={(e) => {e.preventDefault();}}>
+        <InputContainer>
+          <Label>First name:&nbsp;</Label>
+          <input
+            type="text"
+            value={fn}
+            required
+            onChange={e => {
+              setFn(e.target.value);
+            }}
+          />
+        </InputContainer>
+        <InputContainer>
+          <Label>Last name:&nbsp;</Label>
+          <input
+            type="text"
+            value={ln}
+            required
+            onChange={e => {
+              setLn(e.target.value);
+            }}
+          />
+        </InputContainer>
+        <InputContainer>
+          <Label>Date of birth:&nbsp;</Label>
+          <DatePicker
+            selected={dob}
+            onChange={(date: any) => {
+              setDob(date);
+            }}
+          />
+        </InputContainer>
+        <ButtonContainer>
+          <Button
+            type="submit"
+            onClick={() => {
+              const customer: Customer = {
+                dob: dob,
+                firstName: fn,
+                lastName: ln,
+              };
+              addCustomer(customer);
+              toggle();
+            }}
+          >
+            Add Customer
+          </Button>
+        </ButtonContainer>
+      </form>
     </Wrapper>
   );
 };

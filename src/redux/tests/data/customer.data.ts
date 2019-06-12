@@ -52,9 +52,4 @@ export const editedCustomerData = [
     lastName: 'ln2',
     dob: new Date('2019-01-02'),
   },
-  {
-    firstName: 'fn3',
-    lastName: 'ln3',
-    dob: new Date('2019-01-03'),
-  },
 ];
