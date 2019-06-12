@@ -7,7 +7,7 @@ const HeaderContainer = styled.div`
 
 const HeaderElement = styled.div`
   font-weight: 600;
-  width: 100px;
+  width: 120px;
   padding: 10px;
 `;
 

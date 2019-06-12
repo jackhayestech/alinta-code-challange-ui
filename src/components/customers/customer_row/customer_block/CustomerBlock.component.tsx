@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const Block = styled.div`
   padding: 0px 10px;
+  width: 120px;
+  word-wrap: anywhere;
 `;
 
 interface CustomerInfo {
