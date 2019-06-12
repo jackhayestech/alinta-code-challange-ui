@@ -4,11 +4,14 @@ import {
   loadCustomers,
   addCustomer,
   deleteCustomer,
+  editCustomer,
 } from '../action_creators/Customers.actioncreator';
 import {
   loadCustomerData,
   addCustomerData,
   addedCustomerData,
+  editCustomerData,
+  editedCustomerData,
 } from './data/customer.data';
 
 /**
@@ -37,9 +40,19 @@ test('should add customer data', async () => {
 /**
  * Test deleting customer
  *
- * Expect state to equal default
+ * Expect state to expected data
  */
 test('should delete customer data', async () => {
   store.dispatch<any>(deleteCustomer(2));
   expect(store.getState().Customers.data).toEqual(loadCustomerData);
+});
+
+/**
+ * Test editing customer
+ *
+ * Expect state to expected data
+ */
+test('should delete customer data', async () => {
+  store.dispatch<any>(editCustomer(0, editCustomerData));
+  expect(store.getState().Customers.data).toEqual(editedCustomerData);
 });
