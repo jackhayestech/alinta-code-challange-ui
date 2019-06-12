@@ -3,7 +3,7 @@ import moment from 'moment'
 import styled from 'styled-components';
 import CustomerBlock from './customer_block/CustomerBlock.component';
 import EditCustomer from './edit_customer/EditCustomer.component';
-import DeleteCustomer from './delete_customer/DeleteCustomer.component';
+import DeleteCustomer from './delete_customer/DeleteCustomer.connector';
 
 const Row = styled.div`
   display: flex;

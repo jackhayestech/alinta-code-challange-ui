@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { Customer } from '../../../../assets/interfaces'
 import { toggleModalDisplay } from '../../../../redux/action_creators/Ui.actioncreator';
 import { addCustomer } from '../../../../redux/action_creators/Customers.actioncreator';
-import ModalContent from './AddCustomer.component';
+import AddCustomer from './AddCustomer.component';
 
 const mapStateToProps = () => ({});
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch: Function) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ModalContent);
+)(AddCustomer);

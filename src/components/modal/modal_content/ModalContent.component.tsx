@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import "react-datepicker/dist/react-datepicker.css";
 
 import AddCustomer from './add_customer/AddCustomer.connector';
+import DeleteCustomer from './delete_customer/DeleteCustomer.connector';
 
 import { ModalType } from '../../../assets/enums';
 
@@ -24,7 +25,7 @@ const ModalContent: React.FC<ModalContainerProps> = ({ modalType }) => {
       content = <AddCustomer />;
       break;
     case ModalType.DELETE:
-      content = 'delete';
+      content = <DeleteCustomer />;
       break;
     case ModalType.EDIT:
       content = 'edit';

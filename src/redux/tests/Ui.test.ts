@@ -4,6 +4,7 @@ import {
   setFilterText,
   toggleModalDisplay,
   setModalType,
+  setSelectedCustomer,
 } from '../action_creators/Ui.actioncreator';
 
 /**
@@ -46,4 +47,17 @@ test('should correctly set filter text', async () => {
   expect(store.getState().Ui.modalType).toEqual(null);
   store.dispatch<any>(setModalType('test'));
   expect(store.getState().Ui.modalType).toEqual('test');
+});
+
+/**
+ * Test setting selected customer
+ *
+ * Expect state to equal default
+ * Expect state to equal entered number
+ *
+ */
+test('should correctly set selected customer id', async () => {
+  expect(store.getState().Ui.selectedCustomer).toEqual(null);
+  store.dispatch<any>(setSelectedCustomer(1));
+  expect(store.getState().Ui.selectedCustomer).toEqual(1);
 });

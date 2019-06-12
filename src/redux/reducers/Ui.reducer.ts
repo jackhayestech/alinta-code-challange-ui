@@ -1,10 +1,11 @@
 import { action } from './Root.reducer';
-import { SET_FILTER_TEXT, TOGGLE_MODAL_DISPLAY, SET_MODAL_TYPE } from '../Actions';
+import { SET_FILTER_TEXT, TOGGLE_MODAL_DISPLAY, SET_MODAL_TYPE, SET_SELECTED_CUSTOMER } from '../Actions';
 
 const initialState = {
   filter: '',
   modalDisplay: false,
   modalType: null,
+  selectedCustomer: null,
 };
 
 const Ui = (state = initialState, action: action) => {
@@ -24,6 +25,11 @@ const Ui = (state = initialState, action: action) => {
         ...state,
         modalType: action.data,
       };
+    case SET_SELECTED_CUSTOMER:
+      return {
+        ...state,
+        selectedCustomer: action.data,
+      }
     default:
       return state;
   }
