@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-import { Customer } from '../../../../assets/interfaces'
+import { StoreState } from '../../../../assets/interfaces'
 import { toggleModalDisplay } from '../../../../redux/action_creators/Ui.actioncreator';
 import { deleteCustomer } from '../../../../redux/action_creators/Customers.actioncreator';
 import DeleteCustomer from './DeleteCustomer.component';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (state: StoreState) => ({
+  custIndex: state.Ui.selectedCustomer,
+});
 
 const mapDispatchToProps = (dispatch: Function) => ({
   toggle: () => dispatch(toggleModalDisplay()),
-  deleteCustomer: (customer: Customer) => dispatch(deleteCustomer(1)),
+  deleteCustomer: (custIndex: number) => dispatch(deleteCustomer(custIndex)),
 });
 
 export default connect(

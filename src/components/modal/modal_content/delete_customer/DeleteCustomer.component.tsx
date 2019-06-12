@@ -22,30 +22,35 @@ const Label = styled.div`
 
 interface DeleteCustomer {
   toggle: Function;
-  deleteCustomer: Function
+  deleteCustomer: Function;
+  custIndex: number;
 }
 
-const DeleteCustomer: React.FC<DeleteCustomer> = ({ toggle, deleteCustomer }) => {
+const DeleteCustomer: React.FC<DeleteCustomer> = ({
+  toggle,
+  deleteCustomer,
+  custIndex,
+}) => {
   return (
     <Wrapper>
-      <Header>
-        Delete Customer
-      </Header>
+      <Header>Delete Customer</Header>
       <InputContainer>
-        <Label>
-          Are you sure?
-        </Label>
+        <Label>Are you sure?</Label>
       </InputContainer>
       <InputContainer>
-        <button onClick={() => {
-          deleteCustomer();
-          toggle();
-        }}>
+        <button
+          onClick={() => {
+            deleteCustomer(custIndex);
+            toggle();
+          }}
+        >
           Yes
         </button>
-        <button onClick={() => {
-          toggle();
-        }}>
+        <button
+          onClick={() => {
+            toggle();
+          }}
+        >
           No
         </button>
       </InputContainer>
