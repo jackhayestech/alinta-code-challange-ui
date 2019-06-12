@@ -4,15 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 interface DeleteCustomer {
-  delCus: Function;
-  custIndex: number;
+  toggleModalDisplay: Function;
+  setModalType: Function;
+  setSelectedCustomer: Function;
 }
 
-export const DeleteCustomer: React.FC<DeleteCustomer> = ({ delCus, custIndex }): JSX.Element => (
+export const DeleteCustomer: React.FC<DeleteCustomer> = ({ toggleModalDisplay, setModalType, setSelectedCustomer }): JSX.Element => (
   <div
     className="button-icon"
     onMouseDown={() => {
-      delCus(custIndex);
+      toggleModalDisplay();
+      setModalType();
+      setSelectedCustomer();
     }}
     role="button"
     tabIndex={0}
