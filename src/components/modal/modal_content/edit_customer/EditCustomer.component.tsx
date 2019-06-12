@@ -24,6 +24,10 @@ const Label = styled.div`
   align-items: center;
 `;
 
+const Button = styled.button`
+  padding: 7px;
+`;
+
 interface EditCustomer {
   selectedCustomer: number;
   customerData: Customer;
@@ -78,7 +82,7 @@ const EditCustomer: React.FC<EditCustomer> = ({ selectedCustomer, customerData, 
         />
       </InputContainer>
       <InputContainer>
-        <button onClick={() => {
+        <Button onClick={() => {
           const customer: Customer = {
             dob: dob,
             firstName: fn,
@@ -87,8 +91,8 @@ const EditCustomer: React.FC<EditCustomer> = ({ selectedCustomer, customerData, 
           editCustomer(selectedCustomer, customer);
           toggle();
         }}>
-          Add Customer
-        </button>
+          Edit Customer
+        </Button>
       </InputContainer>
     </Wrapper>
   );
