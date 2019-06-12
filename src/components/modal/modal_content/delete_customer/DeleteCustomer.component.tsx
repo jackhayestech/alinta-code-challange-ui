@@ -9,15 +9,18 @@ const Wrapper = styled.div`
 
 const Header = styled.h2`
   text-align: center;
+  padding: 0px 10px;
 `;
 
 const InputContainer = styled.div`
   display: flex;
   padding: 7px;
+  justify-content: center;
 `;
 
-const Label = styled.div`
-  text-align: center;
+const Button = styled.button`
+  padding: 7px;
+  margin: 7px;
 `;
 
 interface DeleteCustomer {
@@ -35,24 +38,24 @@ const DeleteCustomer: React.FC<DeleteCustomer> = ({
     <Wrapper>
       <Header>Delete Customer</Header>
       <InputContainer>
-        <Label>Are you sure?</Label>
+        <div>Are you sure?</div>
       </InputContainer>
       <InputContainer>
-        <button
+        <Button
           onClick={() => {
             deleteCustomer(custIndex);
             toggle();
           }}
         >
           Yes
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => {
             toggle();
           }}
         >
           No
-        </button>
+        </Button>
       </InputContainer>
     </Wrapper>
   );
