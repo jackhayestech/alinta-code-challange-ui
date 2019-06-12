@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
-  padding: 0px 20px;
+  padding: 0px 10px;
+  cursor: pointer;
 `;
 
 
