@@ -24,6 +24,10 @@ const Label = styled.div`
   align-items: center;
 `;
 
+const Button = styled.button`
+  padding: 7px;
+`;
+
 interface AddCustomer {
   toggle: Function;
   addCustomer: Function
@@ -76,7 +80,7 @@ const AddCustomer: React.FC<AddCustomer> = ({ toggle, addCustomer }) => {
         />
       </InputContainer>
       <InputContainer>
-        <button onClick={() => {
+        <Button onClick={() => {
           const customer: Customer = {
             dob: dob,
             firstName: fn,
@@ -86,7 +90,7 @@ const AddCustomer: React.FC<AddCustomer> = ({ toggle, addCustomer }) => {
           toggle();
         }}>
           Add Customer
-        </button>
+        </Button>
       </InputContainer>
     </Wrapper>
   );
