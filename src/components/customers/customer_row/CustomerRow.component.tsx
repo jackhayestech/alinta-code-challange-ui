@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment'
 import styled from 'styled-components';
 import CustomerBlock from './customer_block/CustomerBlock.component';
-import EditCustomer from './edit_customer/EditCustomer.component';
+import EditCustomer from './edit_customer/EditCustomer.connector';
 import DeleteCustomer from './delete_customer/DeleteCustomer.connector';
 
 const Row = styled.div`
