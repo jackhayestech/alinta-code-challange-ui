@@ -18,6 +18,12 @@ const InputContainer = styled.div`
   padding: 7px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  padding: 7px;
+  justify-content: right;
+`;
+
 const Label = styled.div`
   width: 100px;
   display: flex;
@@ -81,7 +87,7 @@ const EditCustomer: React.FC<EditCustomer> = ({ selectedCustomer, customerData, 
           }}
         />
       </InputContainer>
-      <InputContainer>
+      <ButtonContainer>
         <Button onClick={() => {
           const customer: Customer = {
             dob: dob,
@@ -93,7 +99,7 @@ const EditCustomer: React.FC<EditCustomer> = ({ selectedCustomer, customerData, 
         }}>
           Edit Customer
         </Button>
-      </InputContainer>
+      </ButtonContainer>
     </Wrapper>
   );
 };
