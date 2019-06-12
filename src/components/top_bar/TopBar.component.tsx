@@ -7,6 +7,7 @@ import AddCustomer from './add_customer/AddCustomer.connector';
 const Bar = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 

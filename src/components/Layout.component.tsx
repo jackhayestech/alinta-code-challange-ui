@@ -5,19 +5,25 @@ import TopBar from './top_bar/TopBar.component';
 import Customers from './customers/Customers.connector';
 
 const LayoutContainer = styled.div`
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+`;
+
+const ContentContainer = styled.div`
+  padding: 50px;
   display: flex;
   align-items: center;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  margin: 50px;
 `;
 
 export const Layout: React.FunctionComponent = (): JSX.Element => (
   <LayoutContainer>
     <Modal />
-    <TopBar />
-    <Customers />
+    <ContentContainer>
+      <TopBar />
+      <Customers />
+    </ContentContainer>
   </LayoutContainer>
 );
 
