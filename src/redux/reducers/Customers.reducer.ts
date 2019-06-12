@@ -1,5 +1,5 @@
 import { action } from './Root.reducer';
-import { LOAD_CUSTOMERS, ADD_CUSTOMER, DELETE_CUSTOMER } from '../Actions';
+import { LOAD_CUSTOMERS, ADD_CUSTOMER, DELETE_CUSTOMER, EDIT_CUSTOMER } from '../Actions';
 import { localCustomerData } from '../../assets/data/customer.data';
 
 // If the application is being run without connecting to an api load local customer data.
@@ -31,6 +31,18 @@ const Customers = (state = initialState, action: action) => {
           ...state.data.slice(action.data + 1),
         ],
       };
+    case EDIT_CUSTOMER:
+      return {
+        ...state,
+        data: state.data.map((item, index) => {
+          // Replace the item at index
+          if(index === action.data.index) {
+            return action.data.customer;
+          }
+          // Leave every other item unchanged
+          return item;
+        })
+      }
     default:
       return state;
   }

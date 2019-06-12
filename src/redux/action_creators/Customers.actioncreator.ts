@@ -1,6 +1,6 @@
 import { Customer } from '../../assets/interfaces'
 import { Dispatch } from 'redux'
-import { LOAD_CUSTOMERS, ADD_CUSTOMER, DELETE_CUSTOMER } from '../Actions';
+import { LOAD_CUSTOMERS, ADD_CUSTOMER, DELETE_CUSTOMER, EDIT_CUSTOMER } from '../Actions';
 
 // Loads customer data
 export const loadCustomers = (customers: Customer[]) => (dispatch: Dispatch) =>
@@ -21,4 +21,14 @@ export const deleteCustomer = (index: number) => (dispatch: Dispatch) =>
   dispatch({
     type: DELETE_CUSTOMER,
     data: index,
+  });
+
+// Edit customer data
+export const editCustomer = (index: number, customer: Customer) => (dispatch: Dispatch) =>
+  dispatch({
+    type: EDIT_CUSTOMER,
+    data: {
+      index: index,
+      customer: customer,
+    }
   });
